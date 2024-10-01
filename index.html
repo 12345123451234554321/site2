@@ -39,7 +39,7 @@
 		  let x = (now - startVirus)/86400000
           document.getElementById("cntInfected").innerHTML = Math.floor(23.77285696401787618015*Math.pow(1.75811601601519740257,x));
 		  document.getElementById("cntDead").innerHTML = Math.floor((23.77285696401787618015*Math.pow(1.75811601601519740257,x))/255);
-		  document.getElementById("cntRecovered").innerHTML = Math.floor((23.77285696401787618015*Math.pow(1.75811601601519740257,x))/43);
+		  document.getElementById("cntRecovered").innerHTML = Math.floor(23.77285696401787618015*Math.pow(1.75811601601519740257,(x-5)));
         }
         setInterval(fn, 10);
    </script>
