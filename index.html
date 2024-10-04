@@ -20,7 +20,7 @@
   </head>
   <body>
     <div id = "infected">
-        Человек заражено: <span id="cntInfected"></span>
+        Человек заражено: <span id="cntInfected"></span> <span id="perInfected"></span>
     </div>
 	<div id = "dead">
         Человек умерло: <span id="cntDead"></span>
@@ -38,8 +38,9 @@
           let startVirus = new Date(2024, 8, 25, 0, 0, 0, 0);
 		  let x = (now - startVirus)/86400000
           document.getElementById("cntInfected").innerHTML = Math.floor(23.77285696401787618015*Math.pow(1.75811601601519740257,x));
-		  document.getElementById("cntDead").innerHTML = Math.floor((23.77285696401787618015*Math.pow(1.75811601601519740257,x))/255);
-		  document.getElementById("cntRecovered").innerHTML = Math.floor(23.77285696401787618015*Math.pow(1.75811601601519740257,(x-5)));
+		  document.getElementById("perInfected").innerHTML = Math.round((Math.floor(23.77285696401787618015*Math.pow(1.75811601601519740257,x))-Math.floor(23.77285696401787618015*Math.pow(1.75811601601519740257,(x-1))))/Math.floor(23.77285696401787618015*Math.pow(1.75811601601519740257,x))*10000)/100;
+		  document.getElementById("cntDead").innerHTML = Math.floor(23.77285696401787618015*Math.pow(1.75811601601519740257,(x-5))*0.25);
+		  document.getElementById("cntRecovered").innerHTML = Math.floor(23.77285696401787618015*Math.pow(1.75811601601519740257,(x-5))*0.75);
         }
         setInterval(fn, 10);
    </script>
